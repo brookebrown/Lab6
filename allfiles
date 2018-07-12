@@ -1,0 +1,924 @@
+::::::::::::::
+QueueArrayBased.java
+::::::::::::::
+/*
+ * Purpose: Data Structure and Algorithms Lab 6 Problem 1
+ * Status: Complete and thoroughly tested
+ * Last update: 10/13/16
+ * Submitted:  10/13/16
+ * Comment: test suite and sample run attached
+ * @author: Brooke Brown
+ * @version: 2016.10.13
+ */
+
+
+public class QueueArrayBased<T> implements QueueInterface<T>
+{
+
+    protected T []items;  // an array of list items
+    protected int front;  // index of the front item
+    protected int back;  // index of the back item
+    protected int numItems; //total number of items in queue
+
+    public QueueArrayBased()
+    {
+        items = (T[]) new Object[3];
+        front = 0;
+        numItems = 0;
+        back = items.length - 1;
+    }  // end default constructor
+
+    public boolean isEmpty()
+    {
+        return (numItems == 0);
+    } // end isEmpty
+
+    public void dequeueAll()
+    {
+        // Creates a new array; marks old array for
+        // garbage collection.
+        items = (T[]) new Object[3];
+        numItems = 0;
+        front = 0;
+        back = items.length - 1;
+//do somethign w front and back...
+    } // end dequeueAll
+
+    public void enqueue(T newItem)
+    throws  QueueException
+    {   //adds an item to the back of the queue
+        if(items.length == numItems) {
+            resize();
+        } //resizes if the array is full
+        back = (back + 1) % items.length;
+        items[back] = newItem;
+        numItems++;
+    } //end enqueue
+
+    private void resize()
+    {
+        T []temp = (T[]) new Object[items.length*2];
+        for(int i=0; i < numItems; i++) {
+            temp[i] = items[(front+i) % items.length];
+        }
+        front = 0;
+        back = numItems - 1;
+        items = temp;
+    }
+
+    public T peek()
+    throws QueueException
+    {
+        if (numItems != 0)
+        {
+            return items[front];
+        }
+        else
+        {
+            // queue is empty
+            throw new QueueException(
+                "QueueException on peek");
+        }  // end if
+    } // end peek
+
+    public T dequeue()
+    throws QueueException
+    {
+        if (numItems != 0)
+        {
+            T result = items[front];
+            items[front] = null;
+            front = (front + 1) % items.length;
+            numItems--;
+            return result;
+        }
+        else
+        {
+            // queue is empty
+            throw new QueueException(
+                "QueueException on pop");
+        }  // end if
+    } //end dequeue
+
+    public String toString()
+    {
+        String output = "";
+        for(int i=0; i < numItems; i++) {
+            output = output + items[(front+i) % items.length] + " ";
+        }
+        return output;
+    }
+}
+::::::::::::::
+p1.output
+::::::::::::::
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 3
+Error. List is empty.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 5
+
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 1
+   Enter item: brooke
+Item brooke inserted onto queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 3
+Item brooke retrieved from top of queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 1
+   Enter item: bailey
+Item bailey inserted onto queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 3
+Item brooke retrieved from top of queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 2
+Item brooke removed from queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 5
+bailey 
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 1
+   Enter item: taylor
+Item taylor inserted onto queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 5
+bailey taylor 
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 1
+   Enter item: roxanne
+Item roxanne inserted onto queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 5
+bailey taylor roxanne 
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 3
+Item bailey retrieved from top of queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 1
+   Enter item: sarah
+Item sarah inserted onto queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 5
+bailey taylor roxanne sarah 
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 1
+   Enter item: shawn
+Item shawn inserted onto queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 5
+bailey taylor roxanne sarah shawn 
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 3
+Item bailey retrieved from top of queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 2
+Item bailey removed from queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 5
+taylor roxanne sarah shawn 
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 1
+   Enter item: lilly
+Item lilly inserted onto queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 3
+Item taylor retrieved from top of queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 5
+taylor roxanne sarah shawn lilly 
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 4
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 5
+
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 6
+Exiting program... Good Bye!::::::::::::::
+Deq.java
+::::::::::::::
+/*
+ * Purpose: Data Structure and Algorithms Lab 6 Problem 2
+ * Status: Complete and thoroughly tested
+ * Last update: 10/13/16
+ * Submitted:  10/13/16
+ * Comment: test suite and sample run attached
+ * @author: Brooke Brown
+ * @version: 2016.10.13
+ */
+
+public class Deq<T> extends QueueArrayBased<T> implements ExtendedQueueInterface<T>
+{
+
+    public void enqueueFirst(T newItem)
+    throws  ExtendedQueueException
+    {   //adds an item to the front of the queue
+        if(items.length == numItems) {
+            T []temp = (T[]) new Object[items.length*2];
+            for(int i=0; i < numItems; i++) {
+                temp[i] = items[(front+i) % items.length];
+            }
+            front = 0;
+            back = numItems - 1;
+            items = temp;
+        } //resizes if the array is full
+
+        items[(items.length + front - 1) % items.length] = newItem;
+        front = (items.length + front - 1) % items.length;
+        numItems++;
+    } //end enqueue
+
+    public T peekLast()
+    throws ExtendedQueueException
+    {   //peek last item in queue
+        if (numItems != 0)
+        {
+            return items[back];
+        }
+        else
+        {
+            // queue is empty
+            throw new ExtendedQueueException(
+                "ExtendedQueueException on peekLast");
+        }  // end if
+    } // end peekLast
+
+    public T dequeueLast()
+    throws ExtendedQueueException
+    {   //delete item from back of the queue
+        if (numItems != 0)
+        {
+            T result = items[back];
+            items[back] = null;
+            back = (items.length + back - 1) % items.length;
+            numItems--;
+            return result;
+        }
+        else
+        {
+            // queue is empty
+            throw new ExtendedQueueException(
+                "ExtendedQueueException on dequeueLast");
+        }  // end if
+    } //end dequeue
+}
+::::::::::::::
+p2.output
+::::::::::::::
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 1
+   Enter item: joe
+Item joe inserted at back of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 5
+Item joe retrieved from top of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 6
+Item joe retrieved from bottom of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 8
+joe 
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 7
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 2
+   Enter item: larry
+Item larry inserted at front of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 6
+Item larry retrieved from bottom of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 5
+Item larry retrieved from top of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 1
+   Enter item: sarah
+Item sarah inserted at back of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 5
+Item larry retrieved from top of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 6
+Item sarah retrieved from bottom of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 2
+   Enter item: john
+Item john inserted at front of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 5
+Item john retrieved from top of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 6
+Item sarah retrieved from bottom of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 8
+john larry sarah 
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 2
+   Enter item: steve
+Item steve inserted at front of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 5
+Item steve retrieved from top of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 6
+Item sarah retrieved from bottom of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 1
+   Enter item: lilly
+Item lilly inserted at back of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 8
+steve john larry sarah lilly 
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 3
+Item steve removed from front of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 8
+john larry sarah lilly 
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 4
+Item lilly removed from back of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 8
+john larry sarah 
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 7
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 9
+Exiting program... Good Bye!::::::::::::::
+P3.java
+::::::::::::::
+/*
+ * Purpose: Data Structure and Algorithms Lab 6 Problem 3
+ * Status: Complete and thoroughly tested
+ * Last update: 10/13/16
+ * Submitted:  10/13/16
+ * Comment: test suite and sample run attached
+ * @author: Brooke Brown
+ * @version: 2016.10.13
+ */
+
+
+import java.io.*;
+import java.util.*;
+
+public class P3
+{
+    static BufferedReader stdin = new BufferedReader (new InputStreamReader(System.in));
+
+    public static void main(String args[]) throws IOException
+    {
+        ListArrayBasedPlus leftItems = new ListArrayBasedPlus();
+        ListArrayBasedPlus rightItems = new ListArrayBasedPlus();
+        boolean hasStar = false;
+        boolean pal = false;
+        boolean sameCon = false;
+        int j=0;
+
+        System.out.print("Enter character: ");
+        Object newItem  = stdin.readLine().trim();
+        System.out.println(newItem);
+        for(int i = 0; !(newItem.equals("!")); i++) {
+            if(!(newItem.equals("*")) && hasStar == false) {
+                leftItems.add(i, newItem);
+            }
+            else if(newItem.equals("*")) {
+                hasStar = true;
+            }
+            else {
+                rightItems.add(j++, newItem);
+            }
+        System.out.print("Enter character: ");
+        newItem  = stdin.readLine().trim();
+        System.out.println(newItem);
+        }
+        if(hasStar) {
+            if(leftItems.size() > rightItems.size()) {
+                System.out.println("          Left Longer");
+            }
+            else if(leftItems.size() < rightItems.size()) {
+                System.out.println("          Right Longer");
+            }
+            else {
+                for(int i = 0; i < leftItems.size(); i++) {
+                    if(leftItems.get(i).equals(rightItems.get(i))) {
+                        sameCon = true;
+                        if(leftItems.get(i).equals(rightItems.get(rightItems.size() - 1 - i))) {
+                            pal = true;
+                        }
+                        else {
+                            pal = false;
+                        }
+                    }
+                    else {
+                        sameCon = false;
+                    }
+                }
+                if(pal && sameCon) {
+                    System.out.println("          Same Length and Same Content, Palindrome");
+                }
+                else if((!pal && sameCon) || (leftItems.isEmpty() && rightItems.isEmpty())) {
+                    System.out.println("          Same Length and Same Content, No Palindrome");
+                }
+                else {
+                    System.out.println("          Same Length, Different Content");
+                }
+            }
+        }
+        else {
+            System.out.println("          No Star");
+        }
+    }
+}
+
+
+::::::::::::::
+p3.output
+::::::::::::::
+Enter character: l
+Enter character: e
+Enter character: f
+Enter character: t
+Enter character: r
+Enter character: i
+Enter character: g
+Enter character: h
+Enter character: t
+Enter character: !
+          No Star
+Enter character: l
+Enter character: e
+Enter character: f
+Enter character: t
+Enter character: *
+Enter character: r
+Enter character: i
+Enter character: g
+Enter character: !
+          Left Longer
+Enter character: l
+Enter character: e
+Enter character: f
+Enter character: t
+Enter character: *
+Enter character: r
+Enter character: i
+Enter character: g
+Enter character: h
+Enter character: t
+Enter character: !
+          Right Longer
+Enter character: l
+Enter character: e
+Enter character: f
+Enter character: t
+Enter character: *
+Enter character: r
+Enter character: i
+Enter character: g
+Enter character: h
+Enter character: !
+          Same Length, Different Content
+Enter character: l
+Enter character: e
+Enter character: f
+Enter character: t
+Enter character: *
+Enter character: l
+Enter character: e
+Enter character: f
+Enter character: t
+Enter character: !
+          Same Length and Same Content, No Palindrome
+Enter character: r
+Enter character: o
+Enter character: t
+Enter character: o
+Enter character: r
+Enter character: *
+Enter character: r
+Enter character: o
+Enter character: t
+Enter character: o
+Enter character: r
+Enter character: !
+          Same Length and Same Content, Palindrome
+Enter character: l
+Enter character: e
+Enter character: f
+Enter character: t
+Enter character: *
+Enter character: l
+Enter character: e
+Enter character: f
+Enter character: s
+Enter character: !
+          Same Length, Different Content
+Enter character: *
+Enter character: m
+Enter character: !
+          Right Longer
+Enter character: m
+Enter character: o
+Enter character: m
+Enter character: *
+Enter character: !
+          Left Longer
+Enter character: *
+Enter character: !
+          Same Length and Same Content, No Palindrome
+Enter character: a
+Enter character: a
+Enter character: a
+Enter character: a
+Enter character: b
+Enter character: b
+Enter character: b
+Enter character: b
+Enter character: b
+Enter character: b
+Enter character: b
+Enter character: b
+Enter character: *
+Enter character: b
+Enter character: b
+Enter character: b
+Enter character: b
+Enter character: b
+Enter character: b
+Enter character: b
+Enter character: b
+Enter character: a
+Enter character: a
+Enter character: a
+Enter character: a
+Enter character: !
+          Same Length, Different Content
+Enter character: l
+Enter character: e
+Enter character: f
+Enter character: t
+Enter character: l
+Enter character: e
+Enter character: f
+Enter character: t
+Enter character: *
+Enter character: r
+Enter character: i
+Enter character: g
+Enter character: h
+Enter character: t
+Enter character: !
+          Left Longer
+::::::::::::::
+writeup.txt
+::::::::::::::
+Problem3:
+I chose to use a RAB List because when looking at this problem, I assess what has to be done. We are adding to a list in this problem, but only to the end of it. DIA allows us to easily add to the back. Also, because we are only adding to the back, there will be NO shifting (a critical operation). Then, we have to go through the list, this is best done with RAB List because if the ADT has a linked structure, it would have to traverse the list (which is a critical operation). And using a List as compared to a slack or queue is easier because the two are limited to only looking at either the front or back of the list. It cannot access the middle of the list, only if it were to remove the front simutaneously.
+
+The number of operations are:
+BC: 2n + 4
+Just adding to the lists, and + 4 is the conditional statements that have size() and isEmpty(). So when the two sides are of different lengths.
+WC: 6n + 8
+This would happen when the two sides have the same length and the same content. It would add to the lists, use get() to test for same length, and use get() again to check for palindrom. The +8 is the other conditional statements that use size() and isEmpty().
+

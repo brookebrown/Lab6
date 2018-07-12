@@ -1,0 +1,290 @@
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 1
+   Enter item: joe
+Item joe inserted at back of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 5
+Item joe retrieved from top of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 6
+Item joe retrieved from bottom of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 8
+joe 
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 7
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 2
+   Enter item: larry
+Item larry inserted at front of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 6
+Item larry retrieved from bottom of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 5
+Item larry retrieved from top of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 1
+   Enter item: sarah
+Item sarah inserted at back of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 5
+Item larry retrieved from top of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 6
+Item sarah retrieved from bottom of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 2
+   Enter item: john
+Item john inserted at front of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 5
+Item john retrieved from top of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 6
+Item sarah retrieved from bottom of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 8
+john larry sarah 
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 2
+   Enter item: steve
+Item steve inserted at front of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 5
+Item steve retrieved from top of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 6
+Item sarah retrieved from bottom of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 1
+   Enter item: lilly
+Item lilly inserted at back of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 8
+steve john larry sarah lilly 
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 3
+Item steve removed from front of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 8
+john larry sarah lilly 
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 4
+Item lilly removed from back of Deq.
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 8
+john larry sarah 
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 7
+   1. Insert item at back of Deq.
+   2. Insert item at front of Deq. 
+   3. Remove item from front of Deq.
+   4. Remove item from back of Deq. 
+   5. Display front item of Deq.
+   6. Display last item of Deq.
+   7. Clear Deq.
+   8. Display content of Deq. 
+   9. Exit program. 
+Make your menu selection now: 9
+Exiting program... Good Bye!

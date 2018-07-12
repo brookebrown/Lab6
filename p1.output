@@ -1,0 +1,214 @@
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 3
+Error. List is empty.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 5
+
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 1
+   Enter item: brooke
+Item brooke inserted onto queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 3
+Item brooke retrieved from top of queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 1
+   Enter item: bailey
+Item bailey inserted onto queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 3
+Item brooke retrieved from top of queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 2
+Item brooke removed from queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 5
+bailey 
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 1
+   Enter item: taylor
+Item taylor inserted onto queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 5
+bailey taylor 
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 1
+   Enter item: roxanne
+Item roxanne inserted onto queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 5
+bailey taylor roxanne 
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 3
+Item bailey retrieved from top of queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 1
+   Enter item: sarah
+Item sarah inserted onto queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 5
+bailey taylor roxanne sarah 
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 1
+   Enter item: shawn
+Item shawn inserted onto queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 5
+bailey taylor roxanne sarah shawn 
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 3
+Item bailey retrieved from top of queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 2
+Item bailey removed from queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 5
+taylor roxanne sarah shawn 
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 1
+   Enter item: lilly
+Item lilly inserted onto queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 3
+Item taylor retrieved from top of queue.
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 5
+taylor roxanne sarah shawn lilly 
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 4
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 5
+
+   1. Insert item at back of queue.
+   2. Remove item from front of queue.
+   3. Display front item of queue.
+   4. Clear queue.
+   5. Display content of queue. 
+   6. Exit program. 
+Make your menu selection now: 6
+Exiting program... Good Bye!

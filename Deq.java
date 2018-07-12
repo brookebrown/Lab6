@@ -1,0 +1,65 @@
+/*
+ * Purpose: Data Structure and Algorithms Lab 6 Problem 2
+ * Status: Complete and thoroughly tested
+ * Last update: 10/13/16
+ * Submitted:  10/13/16
+ * Comment: test suite and sample run attached
+ * @author: Brooke Brown
+ * @version: 2016.10.13
+ */
+
+public class Deq<T> extends QueueArrayBased<T> implements ExtendedQueueInterface<T>
+{
+
+    public void enqueueFirst(T newItem)
+    throws  ExtendedQueueException
+    {   //adds an item to the front of the queue
+        if(items.length == numItems) {
+            T []temp = (T[]) new Object[items.length*2];
+            for(int i=0; i < numItems; i++) {
+                temp[i] = items[(front+i) % items.length];
+            }
+            front = 0;
+            back = numItems - 1;
+            items = temp;
+        } //resizes if the array is full
+
+        items[(items.length + front - 1) % items.length] = newItem;
+        front = (items.length + front - 1) % items.length;
+        numItems++;
+    } //end enqueue
+
+    public T peekLast()
+    throws ExtendedQueueException
+    {   //peek last item in queue
+        if (numItems != 0)
+        {
+            return items[back];
+        }
+        else
+        {
+            // queue is empty
+            throw new ExtendedQueueException(
+                "ExtendedQueueException on peekLast");
+        }  // end if
+    } // end peekLast
+
+    public T dequeueLast()
+    throws ExtendedQueueException
+    {   //delete item from back of the queue
+        if (numItems != 0)
+        {
+            T result = items[back];
+            items[back] = null;
+            back = (items.length + back - 1) % items.length;
+            numItems--;
+            return result;
+        }
+        else
+        {
+            // queue is empty
+            throw new ExtendedQueueException(
+                "ExtendedQueueException on dequeueLast");
+        }  // end if
+    } //end dequeue
+}

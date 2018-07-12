@@ -1,0 +1,81 @@
+/*
+ * Purpose: Data Structure and Algorithms Lab 6 Problem 3
+ * Status: Complete and thoroughly tested/Incomplete/ Barely started (choose ony one!!!)
+ * Last update: 09/21/16
+ * Submitted:  09/21/16
+ * Comment: test suite and sample run attached
+ * @author: Brooke Brown
+ * @version: 2016.09.21
+ */
+
+
+import java.io.*;
+import java.util.*;
+
+public class P3
+{
+    static BufferedReader stdin = new BufferedReader (new InputStreamReader(System.in));
+
+    public static void main(String args[]) throws IOException
+    {
+        ListArrayBased leftItems = new ListArrayBased();
+        ListArrayBased rightItems = new ListArrayBased();
+        boolean hasStar = false;
+        boolean pal = false;
+        boolean sameCon = false;
+        int j=0;
+
+       System.out.print("Enter character: ");
+       Character newItem = stdin.readLine().trim(); 
+       System.out.println(newItem);
+       for(int i = 0; !(newItem.equals("!")); i++) {
+          if(!(newItem.equals("*")) && hasStar == false) {
+            leftItems.add(i, newItem);
+          }
+          else if(newItem.equals("*")) {
+               hasStar = true;
+           }
+          else {
+             rightItems.add(j++, newItem);
+          }
+       }
+       if(hasStar) {
+           if(leftItems.size() > rightItems.size()) {
+              System.out.println("          Left Longer");
+           }
+           else if(leftItems.size() < rightItems.size()) {
+              System.out.println("          Right Longer");
+           }
+           else {
+              for(i = 0; i < leftItems.size(); i++) {
+                  if(leftItems.get(i).equals(rightItems.get(i))) {
+                     sameCon = true;
+                     if(leftItems.get(i).equals(rightItems.get(rightItems.size() - 1 - i))) {
+                        pal = true;
+                     }
+                      else {
+                          pal = false;
+                       }
+                   }
+                   else {
+                      sameCon = false;
+                   }
+              }
+              if(pal && sameCon) {
+                 System.out.println("          Same Length and Same Content, Palindrome");
+              }
+              else if(!pal && sameCon) {
+System.out.println("          Same Length adn Same Content, No Palindrome");
+}
+             else {
+System.out.println("          Same Length, Different Content");
+}
+          } 
+       }
+       else {
+          System.out.println("          No Star");
+       }
+}
+}
+}
+
